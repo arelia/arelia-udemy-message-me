@@ -1,0 +1,8 @@
+<% flash.each do |notification_type, notification_content| %>
+    <div class="ui <%= notification_type %> message transition">
+        <i class="close icon"></i>
+        <div class="header">
+            <%= notification_content %>
+        </div>
+    </div>
+<% end %>
