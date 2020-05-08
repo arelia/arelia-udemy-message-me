@@ -6,20 +6,22 @@
 <div class="ui two column grid">
 
     <div class="twelve wide column">
-        <div class="ui small feed chatbox">
-            <h4 class="ui header">Followers Activity</h4>
-             <div class="ui feed" id="message-container">
-              <%= render @messages %>
-            </div>
-            <div class="extra content">
-            <%= form_for(@message, html: {class:"ui reply form", role: "form"}, url: message_path, remote: true) do |f| %>
-                <div class="field">
-                    <div class="ui fluid icon">
-                        <%= f.text_field :body, placeholder: "Enter a message"%>
-                        <%= f.button '<i class="icon edit bordered inverted orange"></i>'.html_safe %>
-                    </div>
+        <div class="ui fluid raised card chatbox">
+            <div class="content">
+                <div class="ui feed" id="message-container">
+                    <%= render @messages %>
                 </div>
-            <% end %>
+            </div>
+
+            <div class="extra content">
+                <%= form_for(@message, html: {class:"ui reply form", role: "form"}, url: message_path, remote: true) do |f| %>
+                    <div class="field">
+                        <div class="ui fluid icon input">
+                            <%= f.text_field :body, placeholder: "Enter a message"%>
+                            <%= f.button '<i class="icon edit bordered inverted orange"></i>'.html_safe %>
+                        </div>
+                    </div>
+                <% end %>
             </div>
 
         </div>
